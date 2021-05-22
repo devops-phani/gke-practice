@@ -99,3 +99,7 @@ gcloud container clusters resize test-cluster --num-nodes=1 --region=us-central1
 ```
 gcloud container operations list
 ```
+#### Get the cluster credentials
+```
+gcloud container clusters get-credentials test-cluster  --region=us-central1
+```
