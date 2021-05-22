@@ -27,3 +27,22 @@ kubectl version --client --short
 ```
 - **Reference Documentation Links**
 - https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/
+
+### Login the gcloud with service account and enable the required api's
+```
+gcloud auth activate-service-account  gke-user@test-project.iam.gserviceaccount.com   --key-file=test.json --project=test-project
+
+gcloud projects list
+
+PROJECT_ID=test-project
+
+gcloud projects list
+
+gcloud config set project ${PROJECT_ID}
+
+gcloud --project=${PROJECT_ID} \
+    services enable\
+    container.googleapis.com\
+    containerregistry.googleapis.com\
+    binaryauthorization.googleapis.com
+```
