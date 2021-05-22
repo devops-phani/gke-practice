@@ -187,3 +187,11 @@ gcloud container node-pools create node-pool-2  --cluster=test-cluster \
 ```
 gcloud container node-pools list --cluster=test-cluster --region=us-central1
 ```
+#### Describe the node pool
+```
+gcloud container node-pools describe node-pool-1  --cluster=test-cluster --region=us-central1
+```
+#### Delete the node pool without waiting for the operation in progress to complete
+```
+gcloud container node-pools delete node-pool-1  --cluster=test-cluster --region=us-central1 --async -q
+```
