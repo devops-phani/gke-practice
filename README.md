@@ -105,3 +105,8 @@ gcloud container clusters get-credentials test-cluster  --region=us-central1
 ```
 - **Reference Documentation Links**
 - https://cloud.google.com/sdk/gcloud/reference/container/clusters/get-credentials
+
+#### List the GKE clusters
+```
+gcloud container clusters list --region us-central1
+```
