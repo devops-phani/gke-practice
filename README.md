@@ -28,6 +28,8 @@ kubectl version --client --short
 - **Reference Documentation Links**
 - https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/
 
+Create the service account and give the required permissions to service account . Given owner access to project for testing 
+This is not recommended 
 ### Login the gcloud with service account and enable the required api's
 ```
 gcloud auth activate-service-account  gke-user@test-project.iam.gserviceaccount.com   --key-file=test.json --project=test-project
