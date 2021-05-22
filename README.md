@@ -103,3 +103,5 @@ gcloud container operations list
 ```
 gcloud container clusters get-credentials test-cluster  --region=us-central1
 ```
+- **Reference Documentation Links**
+- https://cloud.google.com/sdk/gcloud/reference/container/clusters/get-credentials
