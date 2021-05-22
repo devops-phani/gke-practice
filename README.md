@@ -158,4 +158,28 @@ gcloud container node-pools create node-pool-1  --cluster=test-cluster \
 ```
 gcloud container clusters upgrade test-cluster  --cluster-version="1.18.17-gke.100" --region=us-central1 --node-pool=default-pool
 ```
+#### Delete the default node pool
+```
+gcloud container node-pools delete default-pool  --cluster=test-cluster --region=us-central1 --quiet 
+```
 
+#### Add the one more node pool
+```
+gcloud container node-pools create node-pool-2  --cluster=test-cluster \
+--region=us-central1 \
+--disk-size=50 \
+--disk-type=pd-standard \
+--enable-autorepair \
+--no-enable-autoupgrade \
+--image-type=UBUNTU \
+--machine-type=e2-medium \
+--max-surge-upgrade=1 \
+--max-unavailable-upgrade=0 \
+--node-labels=app=db2,server=db2 \
+--node-locations=us-central1-b \
+--node-version=1.18.17-gke.100 \
+--num-nodes=1 \
+--enable-autoscaling \
+--max-nodes=2 \
+--min-nodes=1
+```
