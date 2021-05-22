@@ -125,3 +125,37 @@ gcloud container clusters upgrade test-cluster --master --cluster-version="1.18.
 ```
 - **Reference Documentation Links**
 - https://cloud.google.com/sdk/gcloud/reference/container/clusters/upgrade
+
+#### Check the update operation list
+```
+gcloud container operations list
+```
+#### Add the new node pool
+```
+gcloud container node-pools create node-pool-1  --cluster=test-cluster \
+--region=us-central1 \
+--disk-size=50 \
+--disk-type=pd-standard \
+--enable-autorepair \
+--no-enable-autoupgrade \
+--image-type=UBUNTU \
+--machine-type=e2-medium \
+--max-surge-upgrade=1 \
+--max-unavailable-upgrade=0 \
+--node-labels=app=db,server=db1 \
+--node-locations=us-central1-b \
+--node-taints=db=mongo:NoSchedule,server=db:PreferNoSchedule \
+--node-version=1.18.17-gke.100 \
+--num-nodes=1 \
+--enable-autoscaling \
+--max-nodes=2 \
+--min-nodes=0
+```
+
+- **Reference Documentation Links**
+- https://cloud.google.com/sdk/gcloud/reference/container/node-pools/create
+#### Upgrade the default node pool
+```
+gcloud container clusters upgrade test-cluster  --cluster-version="1.18.17-gke.100" --region=us-central1 --node-pool=default-pool
+```
+
