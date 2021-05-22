@@ -195,3 +195,7 @@ gcloud container node-pools describe node-pool-1  --cluster=test-cluster --regio
 ```
 gcloud container node-pools delete node-pool-1  --cluster=test-cluster --region=us-central1 --async -q
 ```
+#### Delete the cluster
+```
+gcloud container clusters delete test-cluster --region=us-central1 -q
+```
