@@ -86,3 +86,16 @@ gcloud container clusters create test-cluster \
 --max-nodes=4 \
 --min-nodes=1 
 ```
+- **Reference Documentation Links**
+- https://cloud.google.com/sdk/gcloud/reference/container/clusters/create
+
+#### Resize the cluster
+```
+gcloud container clusters resize test-cluster --num-nodes=1 --region=us-central1 --node-pool=default-pool
+```
+- **Reference Documentation Links**
+- https://cloud.google.com/sdk/gcloud/reference/container/clusters/resize
+#### Check the cluster operations history
+```
+gcloud container operations list
+```
