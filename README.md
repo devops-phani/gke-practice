@@ -48,3 +48,6 @@ gcloud --project=${PROJECT_ID} \
     containerregistry.googleapis.com\
     binaryauthorization.googleapis.com
 ```
+- **Reference Documentation Links**
+- https://cloud.google.com/kubernetes-engine/docs/how-to
+### Create the GKE Regional Cluster
