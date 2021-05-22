@@ -183,3 +183,7 @@ gcloud container node-pools create node-pool-2  --cluster=test-cluster \
 --max-nodes=2 \
 --min-nodes=1
 ```
+#### List the node pools
+```
+gcloud container node-pools list --cluster=test-cluster --region=us-central1
+```
