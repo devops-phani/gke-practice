@@ -51,3 +51,38 @@ gcloud --project=${PROJECT_ID} \
 - **Reference Documentation Links**
 - https://cloud.google.com/kubernetes-engine/docs/how-to
 ### Create the GKE Regional Cluster
+
+##### Get the GKE versions
+```
+gcloud container get-server-config --region us-central1
+```
+#### Get the machine-types
+```
+gcloud compute machine-types list --filter="zone:( us-central1-b us-central1-c )"
+```
+#### Create the cluster
+```
+gcloud container clusters create test-cluster \
+--region=us-central1 \
+--cluster-version=1.17.17-gke.7800 \
+--labels=environment=dev,server=linux \
+--no-enable-ip-alias \
+--enable-shielded-nodes \
+--disk-size=50 \
+--disk-type=pd-standard \
+--enable-autorepair \
+--no-enable-autoupgrade \
+--enable-stackdriver-kubernetes \
+--no-enable-cloud-logging \
+--image-type=UBUNTU \
+--machine-type=e2-medium \
+--max-surge-upgrade=1 \
+--max-unavailable-upgrade=0 \
+--node-labels=webserevr=nginx,app=frontend \
+--node-locations=us-central1-a,us-central1-b \
+--node-version=1.17.17-gke.7800 \
+--num-nodes=1 \
+--enable-autoscaling \
+--max-nodes=4 \
+--min-nodes=1 
+```
