@@ -110,3 +110,18 @@ gcloud container clusters get-credentials test-cluster  --region=us-central1
 ```
 gcloud container clusters list --region us-central1
 ```
+- **Reference Documentation Links**
+- https://cloud.google.com/sdk/gcloud/reference/container/clusters/list
+#### Describe cluster
+```
+gcloud container clusters describe test-cluster --region us-central1
+```
+- **Reference Documentation Links**
+- https://cloud.google.com/sdk/gcloud/reference/container/clusters/describe
+
+#### Upgrade the control plane (Master node)
+```
+gcloud container clusters upgrade test-cluster --master --cluster-version="1.18.17-gke.100" --region=us-central1
+```
+- **Reference Documentation Links**
+- https://cloud.google.com/sdk/gcloud/reference/container/clusters/upgrade
